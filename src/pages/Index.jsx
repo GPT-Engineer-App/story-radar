@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, VStack, Text, Link, Input, Switch, useColorMode, Heading, Flex, Spinner } from "@chakra-ui/react";
-import { ExternalLinkIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { FaSun, FaMoon, FaExternalLinkAlt } from "react-icons/fa";
 
 const Index = () => {
   const [stories, setStories] = useState([]);
@@ -47,13 +47,13 @@ const Index = () => {
         <Flex justifyContent="space-between" alignItems="center">
           <Heading as="h1" size="xl">Hacker News Top Stories</Heading>
           <Flex alignItems="center">
-            <SunIcon mr={2} />
+            <FaSun style={{marginRight: '8px'}} />
             <Switch
               isChecked={colorMode === "dark"}
               onChange={toggleColorMode}
               mr={2}
             />
-            <MoonIcon />
+            <FaMoon />
           </Flex>
         </Flex>
         
@@ -74,7 +74,7 @@ const Index = () => {
               <Flex justifyContent="space-between" mt={2}>
                 <Text>Upvotes: {story.score}</Text>
                 <Link href={story.url} isExternal color="blue.500">
-                  Read More <ExternalLinkIcon mx="2px" />
+                  Read More <FaExternalLinkAlt style={{display: 'inline', marginLeft: '4px'}} />
                 </Link>
               </Flex>
             </Box>
